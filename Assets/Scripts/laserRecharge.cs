@@ -90,7 +90,7 @@ public class laserRecharge : MonoBehaviour
     IEnumerator Recharge()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         rechargeFunction();
         Debug.Log("coroutine reached");
         StartCoroutine(Recharge());
@@ -100,7 +100,7 @@ public class laserRecharge : MonoBehaviour
    
     void rechargeFunction()
     {
-        currentCharge = currentCharge + 1;
+        currentCharge = currentCharge + 5;
     }
 
    

@@ -18,9 +18,12 @@ public class enemyHealth : MonoBehaviour
 
     public float damage = 10;
 
+    
+
+
     Vector3 direction;
     //public GameObject target;
-    
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +48,11 @@ public class enemyHealth : MonoBehaviour
         //if health 0 - destroy object
         if (currentHealthEnemy == 0)
         {
-          
+            Invoke("spawn", 1.0f);         
             Invoke("DestroyGameObject", 1f);
             Debug.LogError("DESTROY");
+
+            
         }
 
        
@@ -71,7 +76,7 @@ public class enemyHealth : MonoBehaviour
 
     void DestroyGameObject()
     {
-        Destroy(transform.parent.gameObject);
+        Destroy(enemy);
     }
 
 
@@ -85,8 +90,11 @@ public class enemyHealth : MonoBehaviour
         }
     }
 
-
-    
+  
+    void spawn()
+    {
+        Instantiate(enemy, transform.position, transform.rotation);
+    }
 
 
 

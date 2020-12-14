@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 8282844034835479627, guid: 469aef340546a064da86bec9d61e2d74,
         type: 3}
       propertyPath: damage
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469aef340546a064da86bec9d61e2d74, type: 3}
