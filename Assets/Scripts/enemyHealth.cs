@@ -14,13 +14,13 @@ public class enemyHealth : MonoBehaviour
 
     public float maxHealth;
 
-    public static float currentHealthEnemy;
+    public float currentHealthEnemy;
 
     public float damage = 10;
 
     Vector3 direction;
     //public GameObject target;
-    public GameObject enemy;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +71,7 @@ public class enemyHealth : MonoBehaviour
 
     void DestroyGameObject()
     {
-        Destroy(enemy);
+        Destroy(transform.parent.gameObject);
     }
 
 
