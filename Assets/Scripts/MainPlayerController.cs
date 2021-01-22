@@ -53,7 +53,7 @@ public class MainPlayerController : MonoBehaviour
 
         }
         // if i have not pressed up and down - rotate
-        if (!Input.GetKey(KeyCode.UpArrow) && (!Input.GetKey(KeyCode.DownArrow)) &&  (Input.GetKey(KeyCode.RightArrow)))
+        if (/*!Input.GetKey(KeyCode.UpArrow) && (!Input.GetKey(KeyCode.DownArrow))*//* && */ (Input.GetKey(KeyCode.RightArrow)))
         {
 
             transform.Rotate(eulers: Vector3.down * (rotationSpeed * Time.deltaTime));

@@ -48,7 +48,7 @@ public class enemyHealth : MonoBehaviour
         //if health 0 - destroy object
         if (currentHealthEnemy == 0)
         {
-            Invoke("spawn", 1.0f);         
+            /*Invoke("spawn", 1.0f);    */     
             Invoke("DestroyGameObject", 1f);
             Debug.LogError("DESTROY");
 

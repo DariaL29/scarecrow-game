@@ -7,6 +7,8 @@ public class gameStagesController : MonoBehaviour
 {
     public Button continueButton;
     public GameObject rules;
+    public GameObject seconPart;
+
 
     public int countdownTime;
     public Text countdown;
@@ -34,6 +36,22 @@ public class gameStagesController : MonoBehaviour
         {
             Invoke("activeOff", 2.0f);
         }
+
+        //when all enemies are killed start a boss stage of a game
+
+        if (GameObject.FindGameObjectsWithTag("enemy").Length == 0)
+        {
+            PauseGame();
+
+
+        }
+
+
+
+
+
+
+
 
     }
 
@@ -74,5 +92,8 @@ public class gameStagesController : MonoBehaviour
     {
         countdownObject.SetActive(false);
     }
+
+   
+
 
 }
