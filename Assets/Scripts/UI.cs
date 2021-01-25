@@ -4,12 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class UI : MonoBehaviour
+public class rulesUI : MonoBehaviour
 {
     public GameObject rules;
     public GameObject secondPart;
-    public GameObject UILost;
-    public GameObject UIwon;
    
     // Start is called before the first frame update
     void Start()
@@ -17,8 +15,7 @@ public class UI : MonoBehaviour
 
         rules.SetActive(true);
         secondPart.SetActive(false);
-        UILost.SetActive(false);
-        UIwon.SetActive(false);
+
     }
 
     // Update is called once per frame

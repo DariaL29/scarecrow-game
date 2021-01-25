@@ -6,28 +6,31 @@ using UnityEngine.UI;
 public class gameStagesController : MonoBehaviour
 {
     public Button continueButton;
+    public Button continueButton2;
+    
     public GameObject rules;
-    public GameObject seconPart;
+    public GameObject secondPart;
 
 
     public int countdownTime;
     public Text countdown;
     public GameObject countdownObject;
-
+    bool SetInactive;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
         continueButton.onClick.AddListener(TaskOnClick);
+        continueButton2.onClick.AddListener(TaskOnClick2);
+        SetInactive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-      if (rules.activeInHierarchy == true)
+      if (rules.activeInHierarchy == true || secondPart.activeInHierarchy == true)
         {
             PauseGame();
         }
@@ -39,17 +42,17 @@ public class gameStagesController : MonoBehaviour
 
         //when all enemies are killed start a boss stage of a game
 
-        if (GameObject.FindGameObjectsWithTag("enemy").Length == 0)
+        if (GameObject.FindGameObjectsWithTag("enemy").Length == 0 && GameObject.Find("Spawner").GetComponent<spawningEnemieslvl1>().eCount == GameObject.Find("Spawner").GetComponent<spawningEnemieslvl1>().maxcount && SetInactive == false)
         {
-            PauseGame();
-
+         
+            secondPart.SetActive(true);
 
         }
 
-
-
-
-
+        if ( secondPart.activeInHierarchy == false)
+        {
+            ResumeGame();
+        }
 
 
 
@@ -93,7 +96,20 @@ public class gameStagesController : MonoBehaviour
         countdownObject.SetActive(false);
     }
 
-   
+    void TaskOnClick2()
+    {
+        SetInactive = true;
+        secondPart.SetActive(false);
+        Debug.LogError("SET ACTIVE FALSE");
+
+
+        
+        countdownObject.SetActive(true);
+
+     
+       
+        
+    }
 
 
 }

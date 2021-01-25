@@ -8,6 +8,7 @@ TagManager:
   - bullet
   - laser
   - collider
+  - boss
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class EnemyLVL1 : MonoBehaviour
 {
     [SerializeField]
     GameObject bullet;
@@ -10,7 +10,8 @@ public class Boss : MonoBehaviour
     float fireRate;
     float nextFire;
 
-    
+    [SerializeField]
+    GameObject boss;
 
 
 
