@@ -84,7 +84,7 @@ public class gameStagesController : MonoBehaviour
         {
             Debug.Log("Coroutine!");
             countdown.text = countdownTime.ToString();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); 
             countdownTime--;
         }
         countdown.text = "GO!";
@@ -101,11 +101,8 @@ public class gameStagesController : MonoBehaviour
         SetInactive = true;
         secondPart.SetActive(false);
         Debug.LogError("SET ACTIVE FALSE");
-
-
-        
         countdownObject.SetActive(true);
-
+       
      
        
         

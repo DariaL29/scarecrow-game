@@ -17,8 +17,8 @@ public class spawningEnemieslvl1 : MonoBehaviour
     public GameObject enemyTop;
     public GameObject enemyMiddle;
     public GameObject enemyDown;
-   
-    
+
+    public GameObject heart;
 
     [SerializeField]
     private Transform spawnPointTop;
@@ -36,14 +36,16 @@ public class spawningEnemieslvl1 : MonoBehaviour
     {
         started = false;
         continueButton.onClick.AddListener(TaskOnClick);
+        enemyDown.transform.rotation = Camera.main.transform.rotation;
+        enemyTop.transform.rotation = Camera.main.transform.rotation;
        
+        InvokeRepeating("SpawnHeart", 8.0f, 12f);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+       
 
 
         // randomizing spawning point of new enemies
@@ -52,7 +54,7 @@ public class spawningEnemieslvl1 : MonoBehaviour
 
             if (Random.Range(1,3) == 1)
             {
-                Instantiate(enemyDown, spawnPointDown.position, transform.rotation);
+                Instantiate(enemyDown, spawnPointMiddle.position, transform.rotation);
                 eCount++;
             }
 
@@ -65,17 +67,17 @@ public class spawningEnemieslvl1 : MonoBehaviour
 
             if (Random.Range(1, 3) == 3)
             {
-                Instantiate(enemyDown, spawnPointDown.position, transform.rotation);
+                Instantiate(enemyDown, spawnPointTop.position, transform.rotation);
                 eCount++;
             }
         }
-        
-        // spawning a boss
-     
-        
+
        
-      
-     
+
+
+       
+
+
     }
 
     
@@ -91,6 +93,7 @@ public class spawningEnemieslvl1 : MonoBehaviour
 
     void Spawner()
         {
+
         Instantiate(enemyDown, spawnPointDown.position, transform.rotation);
         Instantiate(enemyMiddle, spawnPointMiddle.position, transform.rotation);
         Instantiate(enemyTop, spawnPointTop.position, transform.rotation);
@@ -103,10 +106,21 @@ public class spawningEnemieslvl1 : MonoBehaviour
     }
 
 
+     void SpawnHeart()
+    {
+  
+       
 
-    
+        if (GameObject.FindGameObjectsWithTag("health").Length == 0 && eCount != maxcount)
+        {   
+                Instantiate(heart, spawnPointMiddle.position, transform.rotation);
+
+        }
+
+    }
 
 
 
-   
+
+
 }

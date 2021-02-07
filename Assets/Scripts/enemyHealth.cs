@@ -18,7 +18,7 @@ public class enemyHealth : MonoBehaviour
 
     public float damage = 10;
 
-    
+
 
 
     Vector3 direction;
@@ -43,35 +43,35 @@ public class enemyHealth : MonoBehaviour
         healthSlider.value = currentHealthEnemy;
 
         //taking health of an enemy while its hit by laser gradually 
-      //  StartCoroutine(WaitForSeconds());
+        //  StartCoroutine(WaitForSeconds());
 
         //if health 0 - destroy object
         if (currentHealthEnemy == 0)
         {
-            /*Invoke("spawn", 1.0f);    */     
+            /*Invoke("spawn", 1.0f);    */
             Invoke("DestroyGameObject", 1f);
             Debug.LogError("DESTROY");
 
-            
+
         }
 
-       
+
 
     }
 
 
     // takes damage every 3 seconds if laser is hitting
-   /* IEnumerator WaitForSeconds()
-    {
-       if (MainPlayerController.hit == true )
-        
-            currentHealthEnemy = currentHealthEnemy - damage;
-            yield return new WaitForSeconds(3f);
-            currentHealthEnemy = currentHealthEnemy - damage;
-            StartCoroutine(WaitForSeconds());
-            Debug.LogError("DAMAGE TAKEN");
-        
-    }*/
+    /* IEnumerator WaitForSeconds()
+     {
+        if (MainPlayerController.hit == true )
+
+             currentHealthEnemy = currentHealthEnemy - damage;
+             yield return new WaitForSeconds(3f);
+             currentHealthEnemy = currentHealthEnemy - damage;
+             StartCoroutine(WaitForSeconds());
+             Debug.LogError("DAMAGE TAKEN");
+
+     }*/
 
 
     void DestroyGameObject()
@@ -88,14 +88,19 @@ public class enemyHealth : MonoBehaviour
             currentHealthEnemy = currentHealthEnemy - damage;
             Debug.LogError("DAMAGE TAKEN");
         }
+
+
+
     }
 
-  
+
     void spawn()
     {
         Instantiate(enemy, transform.position, transform.rotation);
     }
 
+
+   
 
 
 }

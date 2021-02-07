@@ -18,21 +18,22 @@ public class InstantiateBoss : MonoBehaviour
 
     [SerializeField]
     private Transform spawnPointDown;
-   
-   
 
+
+    public GameObject heart;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        InvokeRepeating("SpawnHeart", 8.0f, 12f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // StartCoroutine(AccelerateBoss());
 
-        
 
         if (GameObject.Find("SequenceController").GetComponent<setActive>().boss == true && bossAlreadyThere == false)
         {
@@ -41,41 +42,8 @@ public class InstantiateBoss : MonoBehaviour
         }
 
 
-        if ( bossAlreadyThere == true)
-        {
-            //Invoke("movingBossRandomly", 5.0f);
-            StartCoroutine("CountdownWait");
-        }
-
-
-
-
     }
-     /*void movingBossRandomly()
-    {
-      
-            if (Random.Range(1,30) == 5)
-            {
-
-                boss.transform.position = spawnPointDown.position;
-            
-            }
-
-            if (Random.Range(1, 30) == 10)
-            {
-
-                boss.transform.position = spawnPointTop.position;
-                
-            }
-
-            if (Random.Range(1, 30) == 20)
-            {
-                boss.transform.position = spawnPointMiddle.position;
-               
-            }
-
-        
-     } */
+   
 
     void SpawnBoss()
     {
@@ -83,12 +51,18 @@ public class InstantiateBoss : MonoBehaviour
     }
 
 
-    IEnumerator CountdownWait()
-    {
-        yield return new WaitForSeconds(5);
-        boss.transform.position = spawnPointDown.position;
-        Debug.LogError("TRANSFORM");
+        void SpawnHeart()
+        {
+
+
+
+            if (GameObject.FindGameObjectsWithTag("health").Length == 0 && bossAlreadyThere == true )
+            {
+                Instantiate(heart, spawnPointMiddle.position, transform.rotation);
+
+            }
+
+        }
+
+
     }
-
-
-}

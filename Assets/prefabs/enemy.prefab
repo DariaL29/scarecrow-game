@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
   maxHealth: 0
+  currentHealthEnemy: 0
   damage: 10
   enemy: {fileID: 0}
 --- !u!114 &3207890270771441002
