@@ -8,7 +8,7 @@ public class rulesUI : MonoBehaviour
 {
     public GameObject rules;
     public GameObject secondPart;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +21,5 @@ public class rulesUI : MonoBehaviour
     // Update is called once per frame
 
 
-   
+
 }

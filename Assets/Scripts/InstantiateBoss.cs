@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstantiateBoss : MonoBehaviour
 {
-    bool bossAlreadyThere = false;
+    public bool bossAlreadyThere = false;
     public GameObject boss;
     public Rigidbody rbody;
 

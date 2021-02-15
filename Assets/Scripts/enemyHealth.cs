@@ -42,9 +42,7 @@ public class enemyHealth : MonoBehaviour
 
         healthSlider.value = currentHealthEnemy;
 
-        //taking health of an enemy while its hit by laser gradually 
-        //  StartCoroutine(WaitForSeconds());
-
+      
         //if health 0 - destroy object
         if (currentHealthEnemy == 0)
         {
@@ -60,18 +58,6 @@ public class enemyHealth : MonoBehaviour
     }
 
 
-    // takes damage every 3 seconds if laser is hitting
-    /* IEnumerator WaitForSeconds()
-     {
-        if (MainPlayerController.hit == true )
-
-             currentHealthEnemy = currentHealthEnemy - damage;
-             yield return new WaitForSeconds(3f);
-             currentHealthEnemy = currentHealthEnemy - damage;
-             StartCoroutine(WaitForSeconds());
-             Debug.LogError("DAMAGE TAKEN");
-
-     }*/
 
 
     void DestroyGameObject()

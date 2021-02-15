@@ -14,14 +14,16 @@ public class healthController : MonoBehaviour
     public float health = 10;
 
     public GameObject heart;
+    public GameObject UILost;
 
+    
 
     // Start is called before the first frame update
-   
-    
-    
-    
-    
+
+
+
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -32,18 +34,25 @@ public class healthController : MonoBehaviour
     void Update()
     {
         healthSlider.value = currentHealth;
+        launchUi();
      
     }
 
+    void launchUi()
+    {
+        if (currentHealth == 0)
+        {
+            UILost.SetActive(true);
+            Time.timeScale = 0;
+        }
 
-    /* private void OnTriggerEnter(Collider collider)
-     {
-         if (collider.tag == "bulletr")
-         {
-             Debug.Log("bullet collision");
-             currentHealth = (currentHealth - damage);
-         }
-     }
-    */
+
+
+    
+
+    }
+
+
+
 
 }

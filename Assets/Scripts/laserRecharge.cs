@@ -14,13 +14,15 @@ public class laserRecharge : MonoBehaviour
     public GameObject laserVisibility2;
 
     bool OutOfCharge;
+    bool laserActive;
 
     // Start is called before the first frame update
     void Start()
     {
         currentCharge = maxCharge;
         OutOfCharge = false;
-       slider.maxValue = maxCharge;
+        slider.maxValue = maxCharge;
+       
     }
 
     // Update is called once per frame
@@ -53,8 +55,11 @@ public class laserRecharge : MonoBehaviour
 
         slider.value = currentCharge;
 
-        StartCoroutine(DoEverySecond());
 
+       
+        
+            StartCoroutine(DoEverySecond());
+        
    
     }
 
@@ -64,6 +69,7 @@ public class laserRecharge : MonoBehaviour
 
         laserVisibility.SetActive(true);
         laserVisibility2.SetActive(true);
+        laserActive = true;
 
     }
 

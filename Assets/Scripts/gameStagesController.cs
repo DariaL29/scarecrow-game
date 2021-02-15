@@ -17,11 +17,15 @@ public class gameStagesController : MonoBehaviour
     public GameObject countdownObject;
     bool SetInactive;
 
+   
+
 
     // Start is called before the first frame update
     void Start()
     {
-        continueButton.onClick.AddListener(TaskOnClick);
+       
+    
+    continueButton.onClick.AddListener(TaskOnClick);
         continueButton2.onClick.AddListener(TaskOnClick2);
         SetInactive = false;
     }
@@ -54,7 +58,7 @@ public class gameStagesController : MonoBehaviour
             ResumeGame();
         }
 
-
+        
 
     }
 
@@ -65,7 +69,7 @@ public class gameStagesController : MonoBehaviour
         rules.SetActive(false);
         ResumeGame();
         StartCoroutine(CountdownWait());
-        
+       
     }
     void PauseGame()
     {
@@ -103,9 +107,9 @@ public class gameStagesController : MonoBehaviour
         Debug.LogError("SET ACTIVE FALSE");
         countdownObject.SetActive(true);
        
-     
-       
-        
+
+
+
     }
 
 

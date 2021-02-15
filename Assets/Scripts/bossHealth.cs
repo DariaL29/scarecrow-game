@@ -18,7 +18,7 @@ public class bossHealth : MonoBehaviour
 
     public float damage = 10;
 
-    
+    public bool enemyDestroyed;
 
 
     Vector3 direction;
@@ -26,12 +26,19 @@ public class bossHealth : MonoBehaviour
     public GameObject enemy;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
 
         currentHealthEnemy = maxHealth;
         healthSlider.maxValue = maxHealth;
+    }
 
+
+
+    void Start()
+    {
+
+        enemyDestroyed = false;
     }
 
     // Update is called once per frame
@@ -42,17 +49,15 @@ public class bossHealth : MonoBehaviour
 
         healthSlider.value = currentHealthEnemy;
 
-        //taking health of an enemy while its hit by laser gradually 
-      //  StartCoroutine(WaitForSeconds());
-
+      
         //if health 0 - destroy object
         if (currentHealthEnemy == 0)
         {
-            /*Invoke("spawn", 1.0f);    */     
+        
             Invoke("DestroyGameObject", 1f);
             Debug.LogError("DESTROY");
-
             
+
         }
 
        
@@ -65,6 +70,7 @@ public class bossHealth : MonoBehaviour
     void DestroyGameObject()
     {
         Destroy(enemy);
+        enemyDestroyed = true;      
     }
 
 

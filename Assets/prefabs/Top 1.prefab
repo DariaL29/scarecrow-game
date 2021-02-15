@@ -886,7 +886,7 @@ Transform:
   - {fileID: 6398188837008390664}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.268, y: -179.99998, z: 0}
+  m_LocalEulerAnglesHint: {x: 41.000004, y: -179.99998, z: 0}
 --- !u!33 &8619672113225183163
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 8619672113889482242}
-  maxHealth: 10
+  maxHealth: 20
   currentHealthEnemy: 0
   damage: 5
   enemy: {fileID: 8619672113225183167}

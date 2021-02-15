@@ -23,6 +23,7 @@ public class Quit : MonoBehaviour
     void TaskOnClick()
     {
         Application.Quit();
+        Debug.LogError("QUIT");
 
     }
 
